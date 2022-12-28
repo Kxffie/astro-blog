@@ -1,0 +1,65 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PostCard from "../../components/PostCard.astro";
+import {
+	FiChevronLeft,
+	FiChevronRight,
+	FiChevronsLeft,
+	FiChevronsRight,
+	FiSearch,
+} from "react-icons/fi";
+import { GiPerspectiveDiceSixFacesRandom } from "react-icons/gi";
+import { useState } from "react";
+
+const allPosts = await Astro.glob("./posts/*.md");
+
+// const [searchQuery, setSearchQuery] = useState("");
+// const [page, setPage] = useState(1);
+// const [sortOrder, setSortOrder] = useState("desc");
+
+// const handleSearchInput = (event: any) => {
+// 	setSearchQuery(event.target.value);
+// };
+
+// const sortPosts = (order: any) => {
+// 	return allPosts.sort((a, b) => {
+// 		if (order === "asc") {
+// 			return (
+// 				new Date(a.frontmatter.date).getTime() -
+// 				new Date(b.frontmatter.date).getTime()
+// 			);
+// 		} else {
+// 			return (
+// 				new Date(b.frontmatter.date).getTime() -
+// 				new Date(a.frontmatter.date).getTime()
+// 			);
+// 		}
+// 	});
+// };
+---
+
+<Layout title="AIDevBlog | Blogs">
+	<main class="max-w-4xl mx-auto">
+		<br />
+		<div class="flex lg:m-4 m-2">
+			<input
+				type="text"
+				placeholder="Search tags..."
+				class="flex-grow h-10 px-5 pr-16 text-sm bg-white border-2 border-gray-300 rounded-lg focus:border-violet-500 focus:outline-none"
+			/>
+			<button
+				class="px-2 py-1 ml-2 text-lg font-semibold text-white rounded-md shadow-lg bg-violet-500 tooltip"
+				data-tip="Search"
+				><FiSearch size={30} />
+			</button>
+			<button
+				class="px-2 py-1 ml-2 text-lg font-semibold text-white rounded-md shadow-lg bg-violet-500 tooltip"
+				data-tip="Random Post"
+				><GiPerspectiveDiceSixFacesRandom size={30} />
+			</button>
+		</div>
+		<div class="lg:m-4 m-2">
+			{allPosts.map((post) => <PostCard {post} url={post.url} />)}
+		</div>
+	</main>
+</Layout>

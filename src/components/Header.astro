@@ -1,0 +1,30 @@
+---
+export interface Props {
+	favicon: string;
+	href: string;
+}
+
+const { href, favicon } = Astro.props;
+---
+
+<div class="py-3 bg-violet-500">
+	<header class="flex items-center justify-between max-w-4xl mx-auto px-6">
+		<div class="flex items-center">
+			<img
+				width="500"
+				height="500"
+				src={favicon}
+				alt="Logo"
+				class="w-10 h-10 rounded-full"
+			/>
+			<a
+				href={href}
+				class="pl-3 text-2xl font-bold tracking-tight text-white transition duration-150 ease-in-out hover:underline"
+				>AIDevBlog</a
+			>
+		</div>
+		<div class="flex items-center">
+			<a href="/blog" class="text-white">Blogs</a>
+		</div>
+	</header>
+</div>

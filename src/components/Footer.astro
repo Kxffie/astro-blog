@@ -1,0 +1,42 @@
+---
+export interface Props {
+	favicon: string;
+	github: string;
+	discord: string;
+}
+
+const { github, discord, favicon } = Astro.props;
+---
+
+<footer class="bottom-0 left-0 py-3 text-white bg-violet-500">
+	<div class="container max-w-4xl px-6 mx-auto">
+		<div class="flex items-center justify-between">
+			<div class="flex items-center">
+				<img
+					width="500"
+					height="500"
+					src={favicon}
+					alt="Logo"
+					class="w-8 h-8 rounded-full"
+				/>
+				<p class="pl-3 text-sm leading-5">
+					Copyright &#169; 2022 AIDevBlog
+				</p>
+			</div>
+			<div class="flex items-center">
+				<a
+					href={github}
+					target="_blank"
+					class="ml-6 text-sm font-medium leading-5 transition duration-150 ease-in-out hover:text-gray-400"
+					>License</a
+				>
+				<a
+					href={discord}
+					target="_blank"
+					class="ml-6 text-sm font-medium leading-5 transition duration-150 ease-in-out hover:text-gray-400"
+					>Discord</a
+				>
+			</div>
+		</div>
+	</div>
+</footer>

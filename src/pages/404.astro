@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="AIDevBlog | 404">
+	<div class="flex items-center h-screen">
+		<div
+			class="container flex flex-col items-center justify-center mx-auto text-black md:flex-row"
+		>
+			<div class="max-w-md">
+				<div class="text-5xl font-bold font-dark text-violet-500">
+					HTTP 404
+				</div>
+				<p class="text-2xl font-light leading-normal md:text-3xl">
+					Sorry we couldn&apos;t find this page.
+				</p>
+				<p class="mb-8">
+					But dont worry, you can find plenty of other things on our
+					homepage.
+				</p>
+				<a
+					href="/"
+					class="inline px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 border border-transparent rounded-lg shadow focus:outline-none focus:shadow-outline-blue bg-violet-500"
+					>Back to Homepage</a
+				>
+			</div>
+		</div>
+	</div>
+</Layout>

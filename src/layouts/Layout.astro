@@ -1,0 +1,42 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ScrollToTopButton from "../components/ScrollToTopButton";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>{title}</title>
+		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+		<meta content="AIDevBlog" property="og:title" />
+		<meta
+			content="Our blog covers the latest trends and developments in coding and AI. From programming languages to machine learning, we share insights and experiences on a wide range of topics. Whether you're a seasoned developer or just starting out, we hope you'll find our blog a valuable resource."
+			property="og:description"
+		/>
+		<meta content="https://aidevblog.vercel.app/" property="og:url" />
+		<meta content="favicon.png" property="og:image" />
+		<meta
+			name="twitter:card"
+			content="https://aidevblog.vercel.app/favicon.jpg"
+		/>
+	</head>
+	<body>
+		<div class="flex flex-col justify-between h-screen">
+			<Header href="/" favicon="favicon.png" />
+			<div class="mb-auto"><slot /></div>
+			<ScrollToTopButton />
+			<Footer
+				discord="https://discord.gg/2ZJfYspZEN"
+				github="https://github.com/Kxffie"
+				favicon="favicon.png"
+			/>
+		</div>
+	</body>
+</html>
