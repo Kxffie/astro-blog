@@ -1,0 +1,8 @@
+{
+	"title": "AIDevBlog",
+	"description": "Our blog covers the latest trends and developments in coding and AI. From programming languages to machine learning, we share insights and experiences on a wide range of topics. Whether you're a seasoned developer or just starting out, we hope you'll find our blog a valuable resource.",
+	"image": {
+		"src": "favicon.png",
+		"alt": "AIDevBlog"
+	}
+}
